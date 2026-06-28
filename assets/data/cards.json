@@ -1,0 +1,116 @@
+{
+  "title": "Latest news and events",
+  "intro": "News and events from across the NSW Government.",
+  "cards": [
+    {
+      "id": "green-globe-2026",
+      "tag": "Awards",
+      "title": "Nominations open for Green Globe Awards 2026",
+      "summary": "The annual awards recognise individuals and organisations for leadership, commitment and innovation in sustainability across NSW.",
+      "image": "https://picsum.photos/id/292/600/360",
+      "imageAlt": "Sunlight through a green forest canopy",
+      "date": "2 June 2026",
+      "url": "https://www.digital.nsw.gov.au",
+      "detail": "<p>The Green Globe Awards are the NSW Government's premier sustainability awards, celebrating organisations and individuals driving environmental innovation across the state.</p><p>This year adds two new categories recognising circular-economy initiatives and First Nations-led conservation projects. Nominations are open to businesses, community groups, government agencies and individuals.</p>"
+    },
+    {
+      "id": "green-spaces",
+      "tag": "Environment",
+      "title": "Quality green spaces and a million more trees for NSW",
+      "summary": "The NSW Government will create more quality green spaces and increase the tree canopy in Sydney by 2027.",
+      "image": "https://picsum.photos/id/28/600/360",
+      "imageAlt": "Aerial view of tree-lined green parkland",
+      "date": "21 May 2026",
+      "url": "https://www.digital.nsw.gov.au",
+      "detail": "<p>A new statewide greening program will deliver one million additional trees and expand quality green space within ten minutes' walk of every home in Greater Sydney.</p><p>The program prioritises suburbs with the lowest existing canopy cover, targeting cooler streets, better air quality and easier access to nature.</p>"
+    },
+    {
+      "id": "literacy-numeracy",
+      "tag": "Education",
+      "title": "New Premier's Priority to lift literacy and numeracy",
+      "summary": "Renewed effort to lift literacy and numeracy standards across public schools so every student can be their best.",
+      "image": "https://picsum.photos/id/268/600/360",
+      "imageAlt": "Students reading and writing in a bright classroom",
+      "date": "9 May 2026",
+      "url": "https://www.digital.nsw.gov.au",
+      "detail": "<p>A renewed Premier's Priority sets a clear target to increase the proportion of students reaching the top two NAPLAN bands for reading and numeracy.</p><p>The plan invests in evidence-based teaching, small-group tuition and earlier identification of students who need extra support.</p>"
+    },
+    {
+      "id": "digital-restart",
+      "tag": "Digital",
+      "title": "Digital Restart Fund backs new citizen services",
+      "summary": "Investment in user-centred digital services makes it easier for people to access government online.",
+      "image": "https://picsum.photos/id/180/600/360",
+      "imageAlt": "Person using a laptop to access an online service",
+      "date": "28 April 2026",
+      "url": "https://www.digital.nsw.gov.au",
+      "detail": "<p>The Digital Restart Fund supports agile, multi-disciplinary teams to design and deliver digital services around real user needs.</p><p>The latest round funds accessible service redesigns, identity and payments improvements, and reusable design-system components shared across agencies.</p>"
+    },
+    {
+      "id": "renewable-zones",
+      "tag": "Energy",
+      "title": "Renewable Energy Zones reach construction milestone",
+      "summary": "Major progress on Renewable Energy Zones brings cleaner, cheaper and more reliable power closer to communities.",
+      "image": "https://picsum.photos/id/244/600/360",
+      "imageAlt": "Wind turbines on rolling green hills at sunrise",
+      "date": "15 April 2026",
+      "url": "https://www.digital.nsw.gov.au",
+      "detail": "<p>Renewable Energy Zones bundle new generation, storage and transmission to modernise the grid as ageing coal stations retire.</p><p>Construction has begun on key transmission links, unlocking thousands of regional jobs and new investment in host communities.</p>"
+    },
+    {
+      "id": "small-business",
+      "tag": "Business",
+      "title": "Support grows for small business across regional NSW",
+      "summary": "New advisory services and grants help small businesses start, adapt and grow in regional communities.",
+      "image": "https://picsum.photos/id/1067/600/360",
+      "imageAlt": "Owner standing in the doorway of a small regional shop",
+      "date": "30 March 2026",
+      "url": "https://www.digital.nsw.gov.au",
+      "detail": "<p>A regional small-business package combines free advisory services, digital-skills training and targeted grants.</p><p>Support focuses on helping businesses adopt online tools, reach new customers and build resilience to seasonal and economic change.</p>"
+    },
+    {
+      "id": "coastal-protection",
+      "tag": "Environment",
+      "title": "Coastal protection program safeguards beaches",
+      "summary": "Investment in coastal management protects beaches, dunes and estuaries from erosion and storm impacts.",
+      "image": "https://picsum.photos/id/1036/600/360",
+      "imageAlt": "Waves breaking on a wide sandy beach with dunes",
+      "date": "12 March 2026",
+      "url": "https://www.digital.nsw.gov.au",
+      "detail": "<p>The coastal management program funds councils to plan for and respond to erosion, storms and rising sea levels.</p><p>Works include dune restoration, living-shoreline solutions and improved public access that protects sensitive habitats.</p>"
+    },
+    {
+      "id": "health-infrastructure",
+      "tag": "Health",
+      "title": "Major hospital upgrades underway across the state",
+      "summary": "A statewide health infrastructure program delivers new and upgraded hospitals closer to where people live.",
+      "image": "https://picsum.photos/id/1024/600/360",
+      "imageAlt": "Modern hospital building exterior on a clear day",
+      "date": "24 February 2026",
+      "url": "https://www.digital.nsw.gov.au",
+      "detail": "<p>The health infrastructure program is delivering new emergency departments, operating theatres and inpatient units in metropolitan and regional centres.</p><p>Designs emphasise accessibility, natural light and flexible spaces that can adapt to future models of care.</p>"
+    },
+    {
+      "id": "transport-access",
+      "tag": "Transport",
+      "title": "Accessible transport upgrades roll out network-wide",
+      "summary": "Lifts, ramps and wayfinding upgrades make public transport easier to use for everyone.",
+      "image": "https://picsum.photos/id/1071/600/360",
+      "imageAlt": "Modern train at an accessible station platform",
+      "date": "6 February 2026",
+      "url": "https://www.digital.nsw.gov.au",
+      "detail": "<p>The Transport Access Program upgrades stations and wharves with lifts, ramps, accessible toilets and clearer wayfinding.</p><p>Improvements help people with disability, older travellers and parents with prams move through the network independently.</p>"
+    },
+    {
+      "id": "arts-festival",
+      "tag": "Events",
+      "title": "Statewide arts festival celebrates NSW creativity",
+      "summary": "A month-long festival brings music, theatre and visual arts to communities across the state.",
+      "image": "https://picsum.photos/id/1059/600/360",
+      "imageAlt": "Crowd enjoying an outdoor evening arts performance",
+      "date": "19 January 2026",
+      "url": "https://www.digital.nsw.gov.au",
+      "detail": "<p>The statewide arts festival showcases local artists across regional towns and city venues, with many free and family-friendly events.</p><p>The program champions First Nations artists, emerging talent and accessible performances with captioning and Auslan interpretation.</p>"
+    }
+  ]
+}

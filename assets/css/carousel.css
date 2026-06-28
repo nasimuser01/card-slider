@@ -1,0 +1,438 @@
+/* -------------------------------------------------------------------------
+   Card carousel styles.
+   Colours follow the NSW Design System palette. Layout is driven by a single
+   custom property, --per-view, which the JS updates per breakpoint.
+   ------------------------------------------------------------------------- */
+
+:root {
+  --brand: #002664; /* NSW navy */
+  --accent: #d7153a; /* NSW red */
+  --focus: #2e5299;
+  --grey-line: #e4e4e6;
+  --grey-text: #22272b;
+  --gap: 1.5rem;
+  --per-view: 4;
+  --radius: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Public Sans', Arial, sans-serif;
+  color: var(--grey-text);
+  background: #fff;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+/* Page header — the document's main heading + intro */
+.page__header {
+  margin-bottom: 1.5rem;
+}
+.page__header h1 {
+  color: var(--brand);
+  margin: 0;
+  font-size: 2rem;
+}
+.page__intro {
+  margin: 0.5rem 0 0;
+  font-size: 1.0625rem;
+  color: #4c4f55;
+}
+
+/* Skip link — hidden until focused */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--brand);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  z-index: 100;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Visually hidden but still read by screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Carousel (NSW structure) ------------------------------------------ */
+
+.nsw-carousel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.nsw-carousel__header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.nsw-carousel__header nav ul {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Prev/next circular outline buttons */
+.nsw-carousel__control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px; /* comfortable tap target */
+  border-radius: 50%;
+  border: 2px solid var(--brand);
+  background: #fff;
+  color: var(--brand);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+.nsw-carousel__control .nsw-icon {
+  width: 20px;
+  height: 20px;
+}
+.nsw-carousel__control:hover:not([disabled]) {
+  background: var(--brand);
+  color: #fff;
+}
+.nsw-carousel__control[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Wrapper clips the list; the list slides left/right behind it */
+.nsw-carousel__wrapper {
+  overflow: hidden;
+}
+
+.nsw-carousel__list {
+  display: flex;
+  gap: var(--gap);
+  margin: 0;
+  padding: 0.25rem; /* keeps focus rings from being clipped */
+  list-style: none;
+  transition: transform 0.35s ease;
+}
+
+/* Each item takes an equal share of the visible width, minus the gaps */
+.nsw-carousel__item {
+  flex: 0 0 calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
+  min-width: 0;
+}
+
+/* --- Card -------------------------------------------------------------- */
+
+.nsw-card {
+  position: relative; /* anchor for the stretched title link */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border: 1px solid var(--grey-line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+/* Hover/focus fills the card navy and turns the text white (NSW behaviour) */
+.nsw-card:hover,
+.nsw-card:focus-within {
+  background: var(--brand);
+  border-color: var(--brand);
+}
+.nsw-card:hover .nsw-card__title a,
+.nsw-card:hover .nsw-card__copy,
+.nsw-card:hover .nsw-material-icons,
+.nsw-card:focus-within .nsw-card__title a,
+.nsw-card:focus-within .nsw-card__copy,
+.nsw-card:focus-within .nsw-material-icons {
+  color: #fff;
+}
+/* Whole-card focus ring — the link inside is what's actually focused */
+.nsw-card:focus-within {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.nsw-card__image {
+  aspect-ratio: 5 / 3;
+  background: var(--grey-line);
+}
+.nsw-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.nsw-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+  flex: 1 1 auto;
+}
+.nsw-card__title {
+  margin: 0;
+  font-size: inherit; /* reset the <h2> default; the link sets the real size */
+}
+.nsw-card__title a {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--brand);
+  text-decoration: none;
+}
+/* Stretch the link across the whole card so the entire surface is clickable */
+.nsw-card__title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+.nsw-card__title a:focus {
+  outline: none;
+} /* the card shows the focus ring */
+
+.nsw-card__copy {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--grey-text);
+}
+.nsw-card__copy p {
+  margin: 0;
+  /* Trim to 3 lines so cards keep an even height */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* Big navy arrow at the bottom-left of the card */
+.nsw-material-icons {
+  margin-top: auto;
+  font-size: 1.75rem;
+  color: var(--brand);
+}
+
+/* --- Numbered pagination ------------------------------------------------ */
+
+.nsw-carousel__pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.nsw-carousel__page {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.5rem;
+  border: 1px solid var(--brand);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--brand);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+.nsw-carousel__page:hover {
+  background: #eef1f6;
+}
+.nsw-carousel__page[aria-current='true'] {
+  background: var(--brand);
+  color: #fff;
+}
+
+/* One consistent, high-contrast focus ring on the remaining controls */
+.nsw-carousel__control:focus-visible,
+.nsw-carousel__page:focus-visible,
+.modal__close:focus-visible,
+.button:focus-visible,
+.skip-link:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* --- Modal -------------------------------------------------------------- */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal[hidden] {
+  display: none;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.modal__dialog {
+  position: relative;
+  width: min(640px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  animation: modal-in 0.3s ease;
+}
+.modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brand);
+  cursor: pointer;
+}
+.modal__close:hover {
+  background: #fff;
+}
+.modal__media img {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  display: block;
+}
+.modal__content {
+  padding: 1.5rem 2rem 2rem;
+}
+.modal__content h2 {
+  color: var(--brand);
+  margin: 0 0 0.5rem;
+}
+.modal__tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--brand);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  margin: 0 0 0.75rem;
+}
+.modal__date {
+  color: #4c4f55;
+  font-size: 0.875rem;
+  margin: 0 0 1rem;
+}
+[data-modal-body] p {
+  line-height: 1.6;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius);
+}
+.button:hover {
+  background: #001a48;
+}
+
+/* Lock the page behind the modal while it's open (class added by JS) */
+body.modal-open {
+  overflow: hidden;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Breakpoints -------------------------------------------------------- */
+/* The JS sets --per-view too; these keep layout sensible before JS runs */
+
+@media (max-width: 1023px) {
+  :root {
+    --per-view: 2;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --per-view: 1;
+    --gap: 1rem;
+  }
+  .page__header h1 {
+    font-size: 1.5rem;
+  }
+  .modal__content {
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .nsw-carousel__list,
+  .nsw-card,
+  .modal__dialog,
+  .skip-link {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* No-JS fallback: hide the controls (cards are rendered by JS) */
+.no-js .nsw-carousel__header nav,
+.no-js .nsw-carousel__pagination {
+  display: none;
+}

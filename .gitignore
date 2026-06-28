@@ -1,0 +1,14 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Microsoft Office temp/lock files
+~$*
+
+# Logs and dependencies (if tooling is added later)
+node_modules/
+*.log
+
+# Local editor config
+.vscode/
